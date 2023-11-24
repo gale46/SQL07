@@ -1,7 +1,11 @@
-insert into Employee 
-values
-('S0001','一心','銷售部', '男'),
-('S0002', '二聖','生產部', '男'),
-('S0003','三多','銷售部', '女'),
-('S0004', '四維','生產部', '男'),
-('S0005', '五福','銷售部', '女')
+
+CREATE TABLE sales
+(
+O_id CHAR(5),
+P_id CHAR(5),
+NUM INT NOT NULL,
+PRIMARY KEY(O_id,P_id), FOREIGN KEY(P_id)REFERENCES Employee 
+ON UPDATE CASCADE
+ON DELETE CASCADE,
+FOREIGN KEY(P_id)REFERENCES Product(P_id)
+);	
